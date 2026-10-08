@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        html, body, #map { height: 100%; width: 100%; margin: 0; padding: 0; background: #0B2228; }
+        /* Tiles OSM estándar oscurecidos con CSS (sin API key): solo afecta las baldosas, no los marcadores */
+        .kuida-dark-tiles { filter: invert(92%) hue-rotate(180deg) saturate(0.65); }
+        .leaflet-control-attribution { font-size: 9px; background: rgba(11,34,40,0.7); color: #92A8B4; }
+        .leaflet-control-attribution a { color: #92A8B4; }
+        .kuida-user-dot {
+            width: 18px; height: 18px;
+            background: #2E9BFF;
+            border: 3px solid #FFFFFF;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(46,155,255,0.9);
+        }
+        .kuida-pin {
+            width: 26px; height: 26px;
+            background: #D93838;
+            border: 2px solid #FFFFFF;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .kuida-pin-inner {
+            position: absolute; top: 5px; left: 5px;
+            width: 12px; height: 12px;
+            background: #FFFFFF;
+            border-radius: 50%;
+        }
+        .kuida-pin-selected {
+            width: 32px; height: 32px;
+            background: #D93838;
+            border: 3px solid #FFD54F;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 14px rgba(217,56,56,0.9);
+            position: relative;
+        }
+        .kuida-pin-selected .kuida-pin-inner {
+            position: absolute; top: 6px; left: 6px;
+            width: 14px; height: 14px;
+            background: #FFFFFF;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    let map = null;
+    let userMarker = null;
+    let accuracyCircle = null;
+    let siteMarkers = [];
+    window.isMapReady = false;
+
+    try {
+        map = L.map('map', { zoomControl: false }).setView([12.1364, -86.2514], 16);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            className: 'kuida-dark-tiles',
+            attribution: '&copy; OpenStreetMap | KUIDA GPS'
+        }).addTo(map);
+        window.isMapReady = true;
+    } catch (e) {
+        console.error('Error inicializando mapa: ' + e);
+    }
+
+    function setUbicacionUsuario(lat, lng, label) {
+        if (!map) return;
+        const newPos = new L.LatLng(lat, lng);
+        const icon = L.divIcon({ className: 'kuida-user-dot', iconSize: [18, 18], iconAnchor: [9, 9] });
+        if (!userMarker) {
+            userMarker = L.marker(newPos, { icon: icon, zIndexOffset: 1000 }).addTo(map);
+            userMarker.bindPopup('<b>' + (label ? label : 'Mi Ubicacion Real') + '</b><br>Lat: ' + lat.toFixed(5) + '<br>Lon: ' + lng.toFixed(5));
+            map.setView(newPos, 17);
+        } else {
+            userMarker.setLatLng(newPos);
+            userMarker.getPopup().setContent('<b>' + (label ? label : 'Mi Ubicacion Real') + '</b><br>Lat: ' + lat.toFixed(5) + '<br>Lon: ' + lng.toFixed(5));
+            map.panTo(newPos, { animate: true, duration: 1.0, easeLinearity: 0.3 });
+        }
+        if (accuracyCircle) { map.removeLayer(accuracyCircle); accuracyCircle = null; }
+    }
+
+    function cargarPines(jsonString) {
+        if (!map) return;
+        siteMarkers.forEach(m => map.removeLayer(m));
+        siteMarkers = [];
+        let sitios = [];
+        try { sitios = JSON.parse(jsonString); } catch (e) { return; }
+        sitios.forEach((sitio) => {
+            const icon = L.divIcon({
+                className: '', html: '<div class="kuida-pin"><div class="kuida-pin-inner"></div></div>',
+                iconSize: [26, 26], iconAnchor: [13, 25]
+            });
+            const marker = L.marker([sitio.lat, sitio.lon], { icon: icon })
+                .addTo(map)
+                .bindPopup('<b>' + escapeHtml(sitio.nombre) + '</b><br>' + escapeHtml(sitio.tipo));
+            siteMarkers.push(marker);
+        });
+        if (sitios.length > 0 && userMarker) {
+            const group = L.featureGroup(siteMarkers.concat([userMarker]));
+            try { map.fitBounds(group.getBounds().pad(0.15)); } catch (e) {}
+        }
+    }
+
+    function mostrarDetalle(lat, lng, nombre) {
+        if (!map) return;
+        siteMarkers.forEach(m => map.removeLayer(m));
+        siteMarkers = [];
+        const icon = L.divIcon({
+            className: '', html: '<div class="kuida-pin-selected"><div class="kuida-pin-inner"></div></div>',
+            iconSize: [32, 32], iconAnchor: [16, 31]
+        });
+        const marker = L.marker([lat, lng], { icon: icon }).addTo(map)
+            .bindPopup('<b>' + escapeHtml(nombre) + '</b>').openPopup();
+        siteMarkers.push(marker);
+        map.setView([lat, lng], 17, { animate: true });
+    }
+
+    function limpiarPines() {
+        if (!map) return;
+        siteMarkers.forEach(m => map.removeLayer(m));
+        siteMarkers = [];
+    }
+
+    function recentrar(lat, lng) {
+        if (!map) return;
+        map.setView([lat, lng], 17, { animate: true });
+        if (userMarker) userMarker.openPopup();
+    }
+
+    function escapeHtml(s) {
+        if (!s) return '';
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+</script>
+</body>
+</html>

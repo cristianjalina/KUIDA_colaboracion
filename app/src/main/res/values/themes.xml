@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Kuida" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:windowBackground">@color/kuida_surface</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="colorPrimary">@color/kuida_teal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/kuida_surface</item>
+        <item name="colorOnSurface">@color/kuida_on_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/kuida_surface</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Kuida.Rounded</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Kuida.Rounded</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Kuida.Rounded</item>
+    </style>
+
+    <style name="ShapeAppearance.Kuida.Rounded" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="Widget.Kuida.NavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:background">@drawable/nav_indicator</item>
+    </style>
+
+    <!-- Tema para SplashActivity: usa splash_screen (dia/noche automatico) -->
+    <style name="Theme.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">@color/kuida_surface</item>
+        <item name="android:navigationBarColor">@color/kuida_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Dialogos Clean Line Kuida: esquinas cuadradas, sin look generico redondeado -->
+    <style name="Theme.Kuida.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Kuida.Rounded</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Kuida.Rounded</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Kuida.Rounded</item>
+        <item name="colorPrimary">@color/kuida_teal</item>
+        <item name="colorSurface">@color/kuida_card_bg</item>
+        <item name="colorSurfaceContainerHigh">@color/kuida_card_bg</item>
+        <item name="colorOnSurface">@color/kuida_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/kuida_pizarra</item>
+    </style>
+
+    <style name="Theme.Kuida" parent="Base.Theme.Kuida" />
+</resources>

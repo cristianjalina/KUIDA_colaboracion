@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Superficies oscuras: fondo noche Kuida, tarjetas petroleo -->
+    <color name="kuida_surface">#0B2228</color>
+    <color name="kuida_canvas">#0B2228</color>
+    <color name="kuida_card_bg">#102A33</color>
+    <color name="kuida_on_surface">#FFFFFF</color>
+    <color name="kuida_border_subtle">#1E3A44</color>
+    <!-- Acentos se aclaran para contraste en fondo oscuro -->
+    <color name="kuida_teal">#00C9BE</color>
+    <color name="kuida_border_line">#00C9BE</color>
+    <!-- Barra inferior profunda en oscuro (nada de menta brillante) -->
+    <color name="kuida_bar">#004D4D</color>
+    <color name="kuida_pizarra">#8FC1C9</color>
+    <color name="kuida_metric">#102A33</color>
+    <color name="kuida_slate">#A3D8E8</color>
+    <color name="kuida_button">#00695C</color>
+    <color name="kuida_topicon">#8FC1C9</color>
+    <color name="kuida_toptitle">#FFFFFF</color>
+    <color name="kuida_wave_soft">#24424D</color>
+    <color name="kuida_glass">#B3102A33</color>
+    <color name="kuida_glass_border">#33FFFFFF</color>
+    <color name="kuida_blob1">#155E55</color>
+    <color name="kuida_blob2">#0F3B37</color>
+    <color name="kuida_nav_unchecked">#5E7A84</color>
+    <color name="kuida_teal_pale">#134E4A</color>
+</resources>

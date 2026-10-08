@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KUIDA</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_vision">Visión</string>
+    <string name="nav_communication">Comunicar</string>
+    <string name="nav_support">Apoyo</string>
+    <string name="nav_map">Mapa</string>
+    <string name="nav_lsn">Señas</string>
+    <string name="nav_settings">Ajustes</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileGateFragment">
+    <fragment android:id="@+id/profileGateFragment" android:name="com.nicdeveloper.kuida.ui.ProfileGateFragment" android:label="Perfil" />
+    <fragment android:id="@+id/homeFragment" android:name="com.nicdeveloper.kuida.ui.HomeFragment" android:label="Inicio" />
+    <fragment android:id="@+id/visionFragment" android:name="com.nicdeveloper.kuida.ui.VisionFragment" android:label="Vision" />
+    <fragment android:id="@+id/supportFragment" android:name="com.nicdeveloper.kuida.ui.SupportFragment" android:label="Red de apoyo" />
+    <fragment android:id="@+id/settingsFragment" android:name="com.nicdeveloper.kuida.ui.SettingsFragment" android:label="Ajustes" />
+    <fragment android:id="@+id/mapFragment" android:name="com.nicdeveloper.kuida.ui.MapFragment" android:label="Mapa" />
+    <fragment android:id="@+id/lsnCatalogFragment" android:name="com.nicdeveloper.kuida.ui.LsnCatalogFragment" android:label="Señas" />
+    <fragment android:id="@+id/jarvisFragment" android:name="com.nicdeveloper.kuida.ui.JarvisFragment" android:label="Jarvis" />
+    <fragment android:id="@+id/termsFragment" android:name="com.nicdeveloper.kuida.ui.TermsFragment" android:label="Terminos" />
+    <fragment android:id="@+id/profileFragment" android:name="com.nicdeveloper.kuida.ui.ProfileFragment" android:label="Mi Perfil" />
+</navigation>

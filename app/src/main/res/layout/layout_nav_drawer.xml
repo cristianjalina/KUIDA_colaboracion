@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout del Menú Lateral (Navigation Drawer) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_drawer_panel"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@color/kuida_surface"
+    android:orientation="vertical"
+    android:paddingTop="36dp">
+
+    <!-- 1. Encabezado: Logo e Iconografía KUIDA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp">
+
+        <!-- Logotipo circular / isotipo de KUIDA -->
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:contentDescription="Logotipo Kuida"
+            android:src="@drawable/kuida_logo" />
+
+        <!-- Texto KUIDA -->
+        <TextView
+            android:id="@+id/drawer_logo_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:letterSpacing="0.04"
+            android:text="KUIDA"
+            android:textColor="#008080"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Línea divisoria sutil -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/kuida_border_subtle" />
+
+    <!-- 2. Elemento: Mi perfil -->
+    <LinearLayout
+        android:id="@+id/drawer_item_profile"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Icono Mi perfil"
+            android:src="@drawable/ic_drawer_profile" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Mi perfil"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 3. Elemento: Configuracion -->
+    <LinearLayout
+        android:id="@+id/drawer_item_settings"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Icono Configuracion"
+            android:src="@drawable/ic_drawer_settings" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Configuracion"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 4. Elemento: Acerca de Kuida -->
+    <LinearLayout
+        android:id="@+id/drawer_item_about"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Icono Acerca de Kuida"
+            android:src="@drawable/ic_drawer_about" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Acerca de Kuida"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 5. Elemento: Terminos y condiciones -->
+    <LinearLayout
+        android:id="@+id/drawer_item_terms"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Icono Terminos y condiciones"
+            android:src="@drawable/ic_drawer_terms" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Terminos y condiciones"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Línea divisoria sutil -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/kuida_border_subtle" />
+
+    <!-- Asistente de IA (todos los perfiles: cada uno lo usa a su modo) -->
+    <LinearLayout
+        android:id="@+id/drawer_item_jarvis"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Icono Asistente de IA"
+            android:src="@drawable/ic_jarvis"
+            android:tint="@color/kuida_teal" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Asistente de IA"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Catálogo de señas -->
+    <LinearLayout
+        android:id="@+id/drawer_item_lsn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Icono Catálogo de señas"
+            android:src="@drawable/ic_lsn"
+            android:tint="@color/kuida_teal" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Catálogo de señas"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Sección: Apariencia -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="22dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:text="Apariencia"
+        android:textColor="@color/kuida_on_surface"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <!-- Tema Claro -->
+    <LinearLayout
+        android:id="@+id/drawer_item_theme_light"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Tema claro"
+            android:src="@drawable/ic_theme_light" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Claro"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/drawer_check_light"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Tema activo"
+            android:src="@drawable/ic_check"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Tema Oscuro -->
+    <LinearLayout
+        android:id="@+id/drawer_item_theme_dark"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Tema oscuro"
+            android:src="@drawable/ic_theme_dark" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Oscuro"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/drawer_check_dark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Tema activo"
+            android:src="@drawable/ic_check"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Tema Sistema -->
+    <LinearLayout
+        android:id="@+id/drawer_item_theme_system"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Tema del sistema"
+            android:src="@drawable/ic_theme_system" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Sistema"
+            android:textColor="@color/kuida_on_surface"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/drawer_check_system"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Tema activo"
+            android:src="@drawable/ic_check"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

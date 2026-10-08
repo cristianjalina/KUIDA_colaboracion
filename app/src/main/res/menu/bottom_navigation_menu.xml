@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment" android:icon="@drawable/ic_home" android:title="@string/nav_home" />
+    <item android:id="@+id/mapFragment" android:icon="@drawable/ic_map" android:title="@string/nav_map" />
+    <item android:id="@+id/lsnCatalogFragment" android:icon="@drawable/ic_lsn" android:title="@string/nav_lsn" />
+    <item android:id="@+id/supportFragment" android:icon="@drawable/ic_support" android:title="@string/nav_support" />
+    <item android:id="@+id/settingsFragment" android:icon="@drawable/ic_settings" android:title="@string/nav_settings" />
+</menu>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="kuida_teal">#008080</color>
+    <color name="kuida_teal_dark">#004D4D</color>
+    <color name="kuida_mint">#00C9BE</color>
+    <color name="kuida_celeste">#A3D8E8</color>
+    <color name="kuida_gris_azulado">#92A8B4</color>
+    <color name="kuida_pizarra">#4C7280</color>
+    <color name="kuida_petroleo">#203E48</color>
+    <color name="kuida_noche">#0B2228</color>
+    <color name="kuida_surface">#FFFFFF</color>
+    <color name="kuida_canvas">#FFFFFF</color>
+    <color name="kuida_card_bg">#EDF3F3</color>
+    <color name="kuida_border_line">#008080</color>
+    <color name="kuida_border_subtle">#E2EEF0</color>
+    <color name="kuida_on_surface">#0B2228</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="kuida_bar">#008080</color>
+    <color name="kuida_metric">#F0F7F7</color>
+    <color name="kuida_slate">#4C7280</color>
+    <color name="kuida_button">#008080</color>
+    <color name="kuida_topicon">#008080</color>
+    <color name="kuida_toptitle">#008080</color>
+    <color name="kuida_wave_soft">#E0F4F4</color>
+    <color name="kuida_glass">#CCFFFFFF</color>
+    <color name="kuida_glass_border">#80FFFFFF</color>
+    <color name="kuida_blob1">#A9DCD4</color>
+    <color name="kuida_blob2">#D9F1EE</color>
+    <color name="kuida_nav_unchecked">#93AEB8</color>
+    <color name="kuida_teal_pale">#D3ECE9</color>
+</resources>

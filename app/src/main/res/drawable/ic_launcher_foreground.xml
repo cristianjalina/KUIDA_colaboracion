@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- K Kuida modo claro: misma geometria que el splash ensamblado -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0B2228"
+        android:strokeWidth="15"
+        android:strokeLineCap="round"
+        android:pathData="M36,25 L36,61" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0B2228"
+        android:strokeWidth="15"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M82,26 L62,45 L82,64" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0B2228"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:pathData="M27,77 C43,95 67,95 83,74" />
+</vector>

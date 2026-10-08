@@ -1,0 +1,9 @@
+# Ubicación del SDK de Android en tu equipo.
+sdk.dir=RUTA_LOCAL_DEL_ANDROID_SDK
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-flash-lite-latest
+OPENROUTER_API_KEY=
+OPENROUTER_ENDPOINT=https://openrouter.ai/api/v1
+OPENROUTER_MODEL=openrouter/free
+FISH_API_KEY=
+FISH_VOICE_ID=
